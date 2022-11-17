@@ -1,0 +1,22 @@
+{
+    "name": "perfect-code/module-invalid-indexer-monitor",
+    "description": "This module is disabling full reindex by cron and monitoring cases when some index process receives a flag 'invalid' or 'Reindex Required'.",
+    "require": {
+        "php": "^8.1",
+        "magento/framework": "*",
+        "magento/magento-composer-installer": "*"
+    },
+    "type": "magento2-module",
+    "version": "1.0.0",
+    "license": [
+        "GPL-3.0"
+    ],
+    "autoload": {
+        "files": [
+            "registration.php"
+        ],
+        "psr-4": {
+            "PerfectCode\\InvalidIndexerMonitor\\": ""
+        }
+    }
+}
