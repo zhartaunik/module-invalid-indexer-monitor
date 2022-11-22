@@ -4,5 +4,8 @@
         <job name="indexer_reindex_all_invalid" instance="Magento\Indexer\Cron\ReindexAllInvalid" method="execute">
             <schedule>0 0 30 2 *</schedule>
         </job>
+        <job name="catalogrule_inactivate_old_rule" instance="PerfectCode\InvalidIndexerMonitor\Cron\DisableEndedCatalogRule" method="execute">
+            <schedule>30 0 * * *</schedule>
+        </job>
     </group>
 </config>
