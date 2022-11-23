@@ -4,26 +4,22 @@ declare(strict_types=1);
 
 namespace PerfectCode\InvalidIndexerMonitor\Console\Command;
 
-use Magento\Framework\App\ObjectManagerFactory;
-use Magento\Indexer\Console\Command\AbstractIndexerCommand;
-use Magento\Indexer\Model\Indexer\CollectionFactory;
 use PerfectCode\InvalidIndexerMonitor\Cron\DisableEndedCatalogRule as DisableEndedCatalogRuleAlias;
+use Symfony\Component\Console\Command\Command;
 use Symfony\Component\Console\Input\InputInterface;
 use Symfony\Component\Console\Output\OutputInterface;
 
-class DisableEndedCatalogRule extends AbstractIndexerCommand
+class DisableEndedCatalogRule extends Command
 {
     /**
-     * @param ObjectManagerFactory $objectManagerFactory
      * @param DisableEndedCatalogRuleAlias $disableEndedCatalogRule
-     * @param CollectionFactory|null $collectionFactory
+     * @param string|null $name
      */
     public function __construct(
-        ObjectManagerFactory $objectManagerFactory,
         private readonly DisableEndedCatalogRuleAlias $disableEndedCatalogRule,
-        CollectionFactory $collectionFactory = null,
+        string $name = null,
     ) {
-        parent::__construct($objectManagerFactory, $collectionFactory);
+        parent::__construct($name);
     }
 
     /**
